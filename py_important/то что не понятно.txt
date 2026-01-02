@@ -1,0 +1,11 @@
+len()
+pass
+math(библиотека)
+__-__
+hasattr()
+del
+cls
+_cache
+is
+abs
+cum_weights

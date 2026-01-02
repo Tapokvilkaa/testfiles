@@ -1,0 +1,32 @@
+# Mixin-классы (только методы, без __init__)
+class CanFly:
+    def fly(self):
+        print(f"{self.name} летит")
+
+class CanSwim:
+    def swim(self):
+        print(f"{self.name} плывет")
+
+# Основные классы используют миксины
+class Duck(CanFly, CanSwim):  # Наследуем от нескольких классов
+    def __init__(self, name):
+        self.name = name
+    
+    def quack(self):
+        print(f"{self.name} крякает")
+
+class Airplane(CanFly):  # Только летает
+    def __init__(self, model):
+        self.name = model
+
+# Использование
+donald = Duck("Дональд")
+donald.quack()  # Свой метод
+donald.swim()   # Из CanSwim
+donald.fly()    # Из CanFly
+
+boeing = Airplane("Boeing 747")
+boeing.fly()    # Только из CanFly
+# boeing.swim()  # Ошибка! Boeing не умеет плавать
+
+
